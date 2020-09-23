@@ -5,7 +5,7 @@ var GRIDW, GRIDH;
 var framerate = 16;
 var ready = false
 var wasPressed = false
-var resolutionValue, brushSizeValue, brushSizeXValue, brushSizeYValue
+var resolutionValue, var brushSizeValue, brushSizeXValue, brushSizeYValue
 var framerateValue
 var readyBtn
 var OPTS = {
