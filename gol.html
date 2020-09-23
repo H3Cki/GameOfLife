@@ -13,13 +13,42 @@
         </div>
         <div class='controls'>
 
-            <span class='controls'>
-
+            <div class='controls'>
+                <span id='brush-span' class='control'>
+                    <span class='control-info'>
+                        <label id='brush-label' class='label'>Brush Expansion: </label>
+                        <label id='brush-value' class='value'>?</label>
+                        <input type="range" min="0" max="100" class="slider" id="brush">
+                    </span>
+                </span>
+    
+                <span id='brush-span' class='control'>
+                    <span class='control-info'>
+                        <label id='brushx-label' class='label'>Brush X Expansion: </label>
+                        <label id='brushx-value' class='value'>?</label>
+                        <input type="range" min="0" max="100" class="slider" id="brushx">
+                    </span>
+                </span>
+    
+                <span id='brush-span' class='control'>
+                    <span class='control-info'>
+                        <label id='brushy-label' class='label'>Brush Y Expansion: </label>
+                        <label id='brushy-value' class='value'>?</label>
+                        <input type="range" min="0" max="100" class="slider" id="brushy">
+                    </span>
+                </span>
+                
+          
+        </div>
+        <div>
+            
+        </div>
+        <div class='controls'>
             <span id='framerate-span' class='control'>
                 <span class='control-info'>
                     <label id='framerate-label' class='label'>Framerate: </label>
                     <label id='framerate-value' class='value'>?</label>
-                    <input type="range" min="0" max="60" class="slider" id="framerate">
+                    <input type="range" min="1" max="60" class="slider" id="framerate">
                 </span>
 
             </span>
@@ -33,28 +62,10 @@
 
             </span>
 
-            
-            <span id='brush-span' class='control'>
+            <span id='framerate-span' class='control'>
                 <span class='control-info'>
-                    <label id='brush-label' class='label'>Brush Expansion: </label>
-                    <label id='brush-value' class='value'>?</label>
-                    <input type="range" min="0" max="100" class="slider" id="brush">
-                </span>
-            </span>
-
-            <span id='brush-span' class='control'>
-                <span class='control-info'>
-                    <label id='brushx-label' class='label'>Brush X Expansion: </label>
-                    <label id='brushx-value' class='value'>?</label>
-                    <input type="range" min="0" max="100" class="slider" id="brushx">
-                </span>
-            </span>
-
-            <span id='brush-span' class='control'>
-                <span class='control-info'>
-                    <label id='brushy-label' class='label'>Brush Y Expansion: </label>
-                    <label id='brushy-value' class='value'>?</label>
-                    <input type="range" min="0" max="100" class="slider" id="brushy">
+                    <label id='label' class='label'>Trace</label>
+                    <input type="checkbox" id="trace">
                 </span>
             </span>
 
@@ -64,12 +75,8 @@
                     <input type="checkbox" id="stroke">
                 </span>
             </span>
-            
             <a id='reset' class='elem control'>Reset</a>
             <a id='ready' class='elem control'>Ready</a>
-            
-
         </div>
-        
     </body>
 </html>

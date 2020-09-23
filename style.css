@@ -110,6 +110,7 @@ main {
 .controls {
     margin-bottom: 2rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .controls .control {
@@ -121,7 +122,7 @@ main {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
-      width: 8rem;
+      width: 15%;
       -webkit-appearance: none;
       background-color: var(--discord-switch-gray);
     }
@@ -159,4 +160,9 @@ input[type="range"]::-ms-fill-lower {
 }
 input[type="range"]::-ms-fill-upper {  
   background-color: #9a905d;
+}
+
+
+.float-right {
+    float: right;
 }

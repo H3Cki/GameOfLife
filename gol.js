@@ -17,6 +17,7 @@ var OPTS = {
     cellProb: 0.1,
     brushSizeX: 0,
     brushSizeY: 0,
+    traceColor: 0
 }
 
 function getBrushSize(){
@@ -29,7 +30,7 @@ window.onload = function(){
 
 
     WIDTH = Math.floor( window.innerWidth * 0.8 )
-    HEIGHT = Math.floor( window.innerHeight * 0.8 )
+    HEIGHT = Math.floor( window.innerHeight * 0.75 )
 
     
 
@@ -46,6 +47,7 @@ window.onload = function(){
         let brushSizeXInput = $('input[id="brushx"]')
         let brushSizeYInput = $('input[id="brushy"]')
         let strokeInput = $('input[id="stroke"]')
+        let traceInput = $('input[id="trace"]')
         
         readyBtn = $('#ready')
 
@@ -56,9 +58,9 @@ window.onload = function(){
         brushSizeYValue.text(zeroPad(OPTS.brushSizeY,3))
 
 
-        brushSizeInput.attr('max', WIDTH > HEIGHT ? WIDTH / 4 / OPTS.resolution : HEIGHT / 4/ OPTS.resolution)
-        brushSizeXInput.attr('max', WIDTH / 4 / OPTS.resolution)
-        brushSizeYInput.attr('max', HEIGHT / 4 /OPTS.resolution)
+        brushSizeInput.attr('max', WIDTH < HEIGHT ? WIDTH / 2 / OPTS.resolution : HEIGHT / 2 / OPTS.resolution)
+        brushSizeXInput.attr('max', WIDTH / 2 / OPTS.resolution)
+        brushSizeYInput.attr('max', HEIGHT / 2 /OPTS.resolution)
         framerateInput.val(OPTS.framerate)
         resolutionInput.val(OPTS.resolution)
         brushSizeInput.val(getBrushSize())
@@ -119,8 +121,16 @@ window.onload = function(){
         })
 
         strokeInput.on('change', (event) => {
+            if (OPTS.resolution < 2 && event.target.checked) {
+                event.target.checked = false
+                return
+            }
             OPTS.stroke = event.target.checked
             OPTS.strokeWeight = event.target.checked ? 1 : 0
+        })
+
+        traceInput.on('change', (event) => {
+            OPTS.traceColor = event.target.checked ? 90 : 0
         })
 
         readyBtn.on('click', (event) => {
@@ -384,7 +394,7 @@ class Cell {
 
     die(){
         delete cells[this.hash]
-        fill(80)
+        fill(OPTS.traceColor)
         rect(this.x,this.y,OPTS.resolution,OPTS.resolution)
     }
 
